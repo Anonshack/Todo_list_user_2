@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    User's list page
+{% endblock %}
+
+{% block content %}
+    <h1>User's list page</h1>
+    <ul>
+        {% for user in object_list %}
+            <li><a href="{% url 'todo_list' fk=user.pk %}">{{ user.username }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
